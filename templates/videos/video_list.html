@@ -1,0 +1,12 @@
+<h1>Videos</h1>
+<p><a href="{% url 'videos:create' %}">+ Add Video</a></p>
+<ul>
+  {% for v in videos %}
+    <li>
+      <a href="{% url 'videos:detail' v.pk %}">{{ v.MovieTitle }}</a>
+      | <a href="{% url 'videos:update' v.pk %}">Edit</a>
+      | <a href="{% url 'videos:delete' v.pk %}">Delete</a>
+    </li>
+  {% empty %}<li>No videos yet.</li>{% endfor %}
+</ul>
+
